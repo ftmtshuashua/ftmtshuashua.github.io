@@ -14,12 +14,16 @@
         var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
         var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
 
-        alert("Logo:"+sUserAgent)
+        alert("Logo:" + sUserAgent)
 
-        if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
-            window.location.href = "https://itunes.apple.com/cn/app/apple-store/id1451376648";
-        } else {
+        if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {  //电脑端
             window.location.href = "https://www.pgyer.com/Av7v";
+        } else {//手机端
+            if (bIsIpad || bIsIphoneOs) {
+                window.location.href = "https://itunes.apple.com/cn/app/apple-store/id1451376648";
+            } else {
+                window.location.href = "https://www.pgyer.com/Av7v";
+            }
         }
     }
 
