@@ -13,12 +13,16 @@
         var bIsAndroid = sUserAgent.match(/android/i) == "android";
         var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
         var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
-            window.location.href="https://itunes.apple.com/cn/app/apple-store/id1451376648";
+
+        alert("Logo:"+sUserAgent)
+
+        if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
+            window.location.href = "https://itunes.apple.com/cn/app/apple-store/id1451376648";
         } else {
-            window.location.href="https://www.pgyer.com/Av7v";
+            window.location.href = "https://www.pgyer.com/Av7v";
         }
     }
+
     browserRedirect();
 </script>
 
