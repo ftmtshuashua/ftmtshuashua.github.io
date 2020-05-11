@@ -11,45 +11,47 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 	</head>
-	<body> 
+	<body>
+		
 		<div>
-			<canvas id="canvas"></canvas>
+			<canvas id="canvas"  ></canvas>
 		</div>
+		
 		
 		<div class="body">
-		
-		<div  class="content">
-			<ul>
-				<li>服务器</li>
-				<a href="https://cn.aliyun.com/">阿里云</a>
-				<a href="https://www.vultr.com/">Vultr - 5$/月</a>
+
+			<div class="content">
+				<ul>
+					<li>服务器</li>
+					<a href="https://cn.aliyun.com/">阿里云</a>
+					<a href="https://www.vultr.com/">Vultr - 5$/月</a>
 
 
-				<li>网盘</li>
-				<a href="3888.group/ys">YS168</a>
+					<li>网盘</li>
+					<a href="3888.group/ys">YS168</a>
 
-				<li>虚拟货币</li>
-				<a href="https://www.okex.com/">交易所</a>
-				<a href="https://bitcointalk.com/">新币发售</a>
-				<a href="https://www.blockchain.com/">虚拟货币钱包</a>
-				<a href="https://baijiahao.baidu.com/s?id=1627215065673166980&wfr=spider&for=pc">POW与POS的区别</a>
+					<li>虚拟货币</li>
+					<a href="https://www.okex.com/">交易所</a>
+					<a href="https://bitcointalk.com/">新币发售</a>
+					<a href="https://www.blockchain.com/">虚拟货币钱包</a>
+					<a href="https://baijiahao.baidu.com/s?id=1627215065673166980&wfr=spider&for=pc">POW与POS的区别</a>
 
-				<li>比特币</li>
-				<a href="https://testnet.bitmex.com/">比特币期货 - 测试</a>
-				<a href="https://www.bitmex.com/">比特币期货 - 测试</a>
+					<li>比特币</li>
+					<a href="https://testnet.bitmex.com/">比特币期货 - 测试</a>
+					<a href="https://www.bitmex.com/">比特币期货 - 测试</a>
 
 
 
-				<li>升学</li>
-				<a href="zk.cqksy.cn">专衔本报名(衔接:080901)</a>
+					<li>升学</li>
+					<a href="zk.cqksy.cn">专衔本报名(衔接:080901)</a>
 
-				<li>备忘录</li>
-				<a href="3888.group/test">使用HTML作为跳板进行系统判断并跳转</a>
+					<li>备忘录</li>
+					<a href="3888.group/test">使用HTML作为跳板进行系统判断并跳转</a>
 
-			</ul>
+				</ul>
 
+			</div>
 		</div>
-</div>
 
 		<script>
 			
@@ -278,72 +280,6 @@
 					stats.update();
 				},
 
-				// this used to be used straight after createCode, without using createCanvii - it allowed
-				// the characters within the code streams to be easily changable, but caused huge perf issues
-				// OLDdraw: function() {
-
-				// 	var codesLen = M.codes.length;
-				// 	var codeLen;
-				// 	var x;
-				// 	var y;
-				// 	var text;
-				// 	var velocity;
-				// 	var columnIndex;
-				// 	var strength;
-				// 	var fadeStrength;
-
-				// 	M.ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-				// 	M.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-				// 	M.ctx.fillRect(0, 0, M.WIDTH, M.HEIGHT);
-
-				// 	M.ctx.globalCompositeOperation = 'source-over';
-
-				// 	for (var i = 0; i < codesLen; i++) {
-
-				// 		velocity = M.codes[i][0].velocity;
-				// 		M.codes[i][0].position.y += velocity;
-
-				// 		y = M.codes[i][0].position.y;
-				// 		x = M.codes[i][0].position.x;
-				// 		codeLength = M.codes[i].length;
-				// 		strength = M.codes[i][0].strength;
-
-				// 		for (var j = 1; j < codeLength; j++) {
-				// 			text = M.codes[i][j];
-
-				// 			if (j < 5) {
-				// 				M.ctx.shadowColor = 'hsl(104, 79%, 74%)';
-				// 				M.ctx.shadowOffsetX = 0;
-				// 				M.ctx.shadowOffsetY = 0;
-				// 				M.ctx.shadowBlur = 10;
-				// 				M.ctx.fillStyle = 'hsla(104, 79%, ' + (100 - (j * 5)) + '%, ' + strength + ')';
-				// 			} else if (j > (codeLength - 4)) {
-				// 				fadeStrength = j / codeLength;
-				// 				fadeStrength = 1 - fadeStrength;
-
-				// 				M.ctx.shadowOffsetX = 0;
-				// 				M.ctx.shadowOffsetY = 0;
-				// 				M.ctx.shadowBlur = 0;
-				// 				M.ctx.fillStyle = 'hsla(104, 79%, 74%, ' + (fadeStrength + 0.3) + ')';
-				// 			} else {
-				// 				M.ctx.shadowOffsetX = 0;
-				// 				M.ctx.shadowOffsetY = 0;
-				// 				M.ctx.shadowBlur = 0;
-				// 				M.ctx.fillStyle = 'hsla(104, 79%, 74%, ' + strength + ')';
-				// 			}
-
-				// 			// M.ctx.fillStyle = 'hsl(104, 79%, ' + (M.codes[i][0].strength * 74) + '%)';
-				// 			M.ctx.fillText(text, x, (y - (j * M.settings.COL_HEIGHT)));
-
-				// 			if ((j === codeLength - 1) && (y - ((j + 1) * M.settings.COL_HEIGHT) > M.HEIGHT)) {
-				// 				columnIndex = M.codes[i][0].position.x / M.settings.COL_WIDTH;
-				// 				M.codes[columnIndex][0].open = true;
-				// 				M.codes[columnIndex][0].position.y = 0;
-				// 			}
-				// 		}
-				// 	}
-
-				// },
 
 				draw: function() {
 
@@ -391,7 +327,7 @@
 					var column = M.assignColumn();
 
 					if (column) {
-
+						
 						var codeLength = M.randomFromInterval(M.settings.CODE_LENGTH_PARAMS.min, M.settings.CODE_LENGTH_PARAMS.max);
 						var codeVelocity = (Math.random() * (M.settings.VELOCITY_PARAMS.max - M.settings.VELOCITY_PARAMS.min)) + M.settings
 							.VELOCITY_PARAMS.min;
@@ -495,7 +431,7 @@
 					M.linesC.style.position = 'absolute';
 					M.linesC.style.top = 0;
 					M.linesC.style.left = 0;
-					M.linesC.style.zIndex = 10;
+					M.linesC.style.zIndex = -1;
 					document.body.appendChild(M.linesC);
 
 					var linesYBlack = 0;
@@ -573,10 +509,13 @@
 
 				M.init();
 
-				eventListenerz();
+				// eventListenerz();
 
 			};
 		</script>
+
+
+
 
 	</body>
 </html>
